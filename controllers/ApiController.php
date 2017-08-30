@@ -27,8 +27,8 @@ class ApiController extends BaseController {
 			
 			$response = json_encode( $handler( $variables, $query ) );
 					
-			craft() -> cache -> set( $cacheKey, $response );
-					
+			if ( $cacheEnabled ) craft() -> cache -> set( $cacheKey, $response );
+			
 			echo $response;
 			
 		}
