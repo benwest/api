@@ -15,7 +15,7 @@ return [
             
         },
         
-        '/project/{slug}' => function ( $params ) {
+        '/project/{slug}' => function ( $params, $query ) {
             
             return [
                 'slug' => $params[ 'slug' ]

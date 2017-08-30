@@ -23,11 +23,9 @@ class ApiController extends BaseController {
 			
 		} else {
 			
-			$params = craft() -> urlManager -> getRouteParams()[ 'variables' ];
-			
 			$query = craft() -> request -> getQuery();
 			
-			$response = json_encode( $handler( $params, $query ) );
+			$response = json_encode( $handler( $variables, $query ) );
 					
 			craft() -> cache -> set( $cacheKey, $response );
 					

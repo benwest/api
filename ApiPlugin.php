@@ -51,11 +51,7 @@ class ApiPlugin extends BasePlugin
 		
 		foreach ( $handlers as $url => $handler ) {
 			
-			echo $url . PHP_EOL;
-			
 			$url = preg_replace( '/{(.*?)}/', '(?P<$1>[^\/]+)', $url );
-			
-			echo $url . PHP_EOL;
 			
 			$routes[ $base . $url ] = [
 				
